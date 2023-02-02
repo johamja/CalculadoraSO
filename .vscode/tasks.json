@@ -8,7 +8,8 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-                "${fileDirname}/Oper",
+                "${fileDirname}/OpeMate.c",
+                "${fileDirname}/Pila.c",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "-lm"
