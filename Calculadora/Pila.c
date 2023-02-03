@@ -53,3 +53,7 @@ int length()
 {
     return SIZE;
 }
+
+int lastelement(){
+    return inp_array[top];
+}

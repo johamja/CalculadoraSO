@@ -5,3 +5,4 @@ void show();
 void wipe();
 int size();
 int length();
+int lastelement();
