@@ -3,6 +3,7 @@
 #define SIZE 10
 
 #define Red "\x1b[31m"
+#define M "\x1b[35m"
 #define Re "\x1b[0m"
 
 int top = -1;
@@ -32,7 +33,7 @@ void show()
     int x = SIZE;
     for (int i = (top - SIZE) + 1; i <= top; ++i)
     {
-        printf("%d:\t%d\n", x, inp_array[i]);
+        printf(M"%d"Re":\t%f\n", x, inp_array[i]);
         x = x - 1;
     }
     printf("\n");

@@ -48,9 +48,9 @@ int main()
             }
             else
             {
-                int temp;
+                double temp;
                 printf("Ingresa el numero:\t");
-                scanf("%i", &temp);
+                scanf("%le", &temp);
                 push(temp);
                 LimPantalla();
                 break;
