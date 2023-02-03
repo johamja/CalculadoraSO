@@ -5,13 +5,15 @@
 #define Red "\x1b[31m"
 #define Re "\x1b[0m"
 
-int top = -1, inp_array[SIZE];
+int top = -1;
+double inp_array[SIZE];
 void push();
 void pop();
 void show();
 int size();
+double lastelement();
 
-void push(int a)
+void push(double a)
 {
     top = top + 1;
     inp_array[top] = a;
@@ -54,6 +56,6 @@ int length()
     return SIZE;
 }
 
-int lastelement(){
+double lastelement(){
     return inp_array[top];
 }

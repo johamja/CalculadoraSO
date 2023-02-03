@@ -1,11 +1,11 @@
 // Todas las operacion en el archvio OpeMate.c
 
-int Suma(int a, int b);
-int Resta(int a, int b);
-int Multiplicacion(int a, int b);
-int Division(int a, int b);
-int RaizCuadrada(int a);
-int Seno(int a);
-int Coseno(int a);
-int Tangente(int a);
-int Potencia(int a, int b);
+double Suma(double a, double b);
+double Resta(double a, double b);
+double Multiplicacion(double a, double b);
+double Division(double a, double b);
+double RaizCuadrada(double a);
+double Seno(double a);
+double Coseno(double a);
+double Tangente(double a);
+double Potencia(double a, double b);
