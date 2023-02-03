@@ -47,37 +47,36 @@ Tenemos varias secciones en la ejecución del proyecto.
 la compilación del proyecto estada dada por un archivo [task.json](.vscode/tasks.json) que usa ``vscode`` para la ejecución del proyecto de manera automática.
 
 ``` json
-
 {
-    "tasks": [
-        {
-            "type": "cppbuild",
-            "label": "C/C++: gcc compilar archivo activo",
-            "command": "/usr/bin/gcc",          //ubicacion de nuestro compilador
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",                      //compilacion de la calculadora
-                "${fileDirname}/OpeMate.c",     //compilacion de las operaciones matematicas
-                "${fileDirname}/Pila.c",        //compilacion de la pila
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
-                "-lm"                           //argumento para que se compile <math.h>
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": "Tarea generada por el depurador."
-        }
-    ],
-    "version": "2.0.0"
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc compilar archivo activo",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "${fileDirname}/OpeMate.c",
+                "${fileDirname}/Pila.c",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-lm"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tarea generada por el depurador."
+        }
+    ],
+    "version": "2.0.0"
 }
 ```
 
@@ -86,16 +85,15 @@ la compilación del proyecto estada dada por un archivo [task.json](.vscode/task
 También se tiene un bash para ``linux`` que hace la eliminación de ejecutables del proyecto, y esta configurado para hacer la ejecución desde vscode desde el archivo [launch.json](.vscode/launch.json).
 
 ``` json
-
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "command": "bash BorradoDeCompilaciones.sh",    //ejecucion del bash
-            "name": "Eliminacion de archivos",              //nombre de la tarea de ejecucion
-            "request": "launch",
-            "type": "node-terminal"
-        }
-    ]
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "command": "bash BorradoDeCompilaciones.sh",
+            "name": "Eliminacion de archivos",
+            "request": "launch",
+            "type": "node-terminal"
+        }
+    ]
 }
 ```
