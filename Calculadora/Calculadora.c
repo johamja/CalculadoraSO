@@ -43,7 +43,7 @@ int main()
             if (size() == length() - 1)
             {
                 LimPantalla();
-                printf(Red"Pila llena"Re"\n\n");
+                printf(Red "Pila llena" Re "\n\n");
                 break;
             }
             else
@@ -63,6 +63,7 @@ int main()
             printf("Seleccione la operacion\n");
             printf(C "+,\t-,\t*,\t/,\tp(potencia),\n" Re);
             printf(C "r(raiz cuadrada),\ts(seno),\tc(coseno),\tt(tangente).\n" Re);
+            printf(Red "x(cancelar)" Re "\n");
 
             while (getchar() != '\n')
                 ;
@@ -71,33 +72,66 @@ int main()
             switch (Operaciones)
             {
             case '+':
-
+                int a = lastelement();
+                pop();
+                int b = lastelement();
+                pop();
+                push(Suma(b, a));
                 break;
             case '-':
-
+                int a1 = lastelement();
+                pop();
+                int b1 = lastelement();
+                pop();
+                push(Resta(b1, a1));
                 break;
             case '*':
-
+                int a2 = lastelement();
+                pop();
+                int b2 = lastelement();
+                pop();
+                push(Multiplicacion(b2, a2));
                 break;
             case '/':
-
+                int a3 = lastelement();
+                pop();
+                int b3 = lastelement();
+                pop();
+                push(Division(b3, a3));
                 break;
             case 'p':
-
+                int a4 = lastelement();
+                pop();
+                int b4 = lastelement();
+                pop();
+                push(Potencia(b4, a4));
                 break;
             case 'r':
-
+                int a5 = lastelement();
+                pop();
+                push(RaizCuadrada(a5));
                 break;
             case 's':
-
+                int a6 = lastelement();
+                pop();
+                push(Seno(a6));
                 break;
             case 'c':
-
+                int a7 = lastelement();
+                pop();
+                push(Coseno(a7));
                 break;
             case 't':
-
+                int a8 = lastelement();
+                pop();
+                push(Tangente(a8));
+                break;
+            case 'x':
                 break;
             default:
+                LimPantalla();
+                while (getchar() != '\n')
+                    ;
                 break;
             }
             LimPantalla();
@@ -115,10 +149,13 @@ int main()
             LimPantalla();
             break;
         default:
+            LimPantalla();
+            while (getchar() != '\n')
+                ;
             break;
         }
     }
 
-    printf(G"\n\nAdiós\n\n"Re);
+    printf(G "\n\nAdiós\n\n" Re);
     return 0;
 }
