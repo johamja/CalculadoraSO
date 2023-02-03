@@ -8,7 +8,7 @@
     @param b segundo elemento
     @return a+b
 */
-int Suma(int a, int b)
+double Suma(double a, double b)
 {
     return a + b;
 }
@@ -18,7 +18,7 @@ int Suma(int a, int b)
     @param b segundo elemento
     @return a-b
 */
-int Resta(int a, int b)
+double Resta(double a, double b)
 {
     return a - b;
 }
@@ -28,7 +28,7 @@ int Resta(int a, int b)
     @param b segundo elemento
     @return a*b
 */
-int Multiplicacion(int a, int b)
+double Multiplicacion(double a, double b)
 {
     return a * b;
 }
@@ -38,7 +38,7 @@ int Multiplicacion(int a, int b)
     @param b segundo elemento
     @return a/b
 */
-int Division (int a, int b)
+double Division (double a, double b)
 {
     return a / b;
 }
@@ -47,7 +47,7 @@ int Division (int a, int b)
     @param a primer elemento
     @return raiz cuadrada de a
 */
-int RaizCuadrada(int a)
+double RaizCuadrada(double a)
 {
     return sqrt(a);
 }
@@ -56,7 +56,7 @@ int RaizCuadrada(int a)
     @param a primer elemento
     @return sen(a)
 */
-int Seno(int a)
+double Seno(double a)
 {
     return sin(a);
 }
@@ -65,7 +65,7 @@ int Seno(int a)
     @param a primer elemento
     @return cos(a)
 */
-int Coseno(int a)
+double Coseno(double a)
 {
     return cos(a);
 }
@@ -74,7 +74,7 @@ int Coseno(int a)
     @param a primer elemento
     @return tan(a)
 */
-int Tangente(int a)
+double Tangente(double a)
 {
     return tan(a);
 }
@@ -84,7 +84,7 @@ int Tangente(int a)
     @param b segundo elemento
     @return a^b
 */
-int Potencia(int a, int b)
+double Potencia(double a, double b)
 {
     return pow(a,b);
 }
