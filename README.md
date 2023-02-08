@@ -1,5 +1,8 @@
 # CalculadoraSO
 
+[![image](https://user-images.githubusercontent.com/61659765/217417023-b5a0b99d-3efd-4ad3-b8e7-80b9b1a8e840.png)](https://youtu.be/vihYDBO5scY)
+
+
 Este programa por consola es un simulador de la calculadora ``jsEmu48`` el cual te permite seleccionar operaciones matemáticas y operaciones de control de la calculadora.
 
 ![Terminal con opciones](img/img1.png)
