@@ -44,56 +44,59 @@ Tenemos varias secciones en la ejecución del proyecto.
 
 ### Compilación del proyecto
 
-la compilación del proyecto estada dada por un archivo [task.json](.vscode/tasks.json) que usa ``vscode`` para la ejecución del proyecto de manera automática.
+la compilación del proyecto estada dada por un archivo [task.json](.vscode/tasks.json) que usa ``vscode`` para la ejecución del proyecto de manera automática y también encontramos una tarea que realiza la eliminación de los ejecutables del proyecto
 
 ``` json
 {
     "tasks": [
         {
-            "type": "cppbuild",
-            "label": "C/C++: gcc compilar archivo activo",
-            "command": "/usr/bin/gcc",
+            "label": "Eliminacion de los ejecutables", 
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/BorradoDeCompilaciones.sh"
+            ],
+        },
+        {
+            "label": "Ejecucion de la compilacion",
+            "command": "gcc",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
-                "${fileDirname}/OpeMate.c",
-                "${fileDirname}/Pila.c",
+                "${workspaceFolder}/Calculadora/Calculadora.c",
+                "${workspaceFolder}/Calculadora/OpeMate.c",
+                "${workspaceFolder}/Calculadora/Pila.c",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
+                "${workspaceFolder}/Calculadora/launch",
                 "-lm"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": "Tarea generada por el depurador."
+            ]
         }
     ],
     "version": "2.0.0"
 }
 ```
 
-### Script para la eliminación de ejecutables
+### Ejecucion del proyecto
 
-También se tiene un bash para ``linux`` que hace la eliminación de ejecutables del proyecto, y esta configurado para hacer la ejecución desde vscode desde el archivo [launch.json](.vscode/launch.json).
+La ejecución se lleva acabo por esta configuración con tareas de ``preLaunchTask`` que ejecuta la compilación, ``command`` que ejecuta el archivo resultante de la compilación y ``postDebugTask`` que elimina el ejecutable cuando acaba la ejecución del proyecto, el archivo es [launch.json](.vscode/launch.json).
 
 ``` json
 {
+
     "version": "0.2.0",
     "configurations": [
         {
-            "command": "bash BorradoDeCompilaciones.sh",
-            "name": "Eliminacion de archivos",
+            "name": "Launch",
             "request": "launch",
-            "type": "node-terminal"
-        }
-    ]
+            "type": "node-terminal",
+            "preLaunchTask": "Ejecucion de la compilacion",
+            "command": "clear && ${workspaceFolder}/Calculadora/launch",
+            "postDebugTask": "Eliminacion de los ejecutables",
+        },
+    ],
+
 }
 ```
+
+Buscar la opción en (Ejecución y depuración) y dar en ``Launch``
+
+![Launch](img/img3.png)
