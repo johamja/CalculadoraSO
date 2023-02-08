@@ -1,6 +1,6 @@
 {
     "tasks": [
-        {
+/*         {
             "type": "cppbuild",
             "label": "C/C++: gcc compilar archivo activo",
             "command": "/usr/bin/gcc",
@@ -25,6 +25,27 @@
                 "isDefault": true
             },
             "detail": "Tarea generada por el depurador."
+        }, */
+        {
+            "label": "Eliminacion de los ejecutables", 
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/BorradoDeCompilaciones.sh"
+            ],
+        },
+        {
+            "label": "Ejecucion de la compilacion",
+            "command": "gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${workspaceFolder}/Calculadora/Calculadora.c",
+                "${workspaceFolder}/Calculadora/OpeMate.c",
+                "${workspaceFolder}/Calculadora/Pila.c",
+                "-o",
+                "${workspaceFolder}/Calculadora/launch",
+                "-lm"
+            ]
         }
     ],
     "version": "2.0.0"

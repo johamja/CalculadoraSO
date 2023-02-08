@@ -3,12 +3,16 @@
     // Mantenga el puntero para ver las descripciones de los existentes atributos.
     // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
+    
     "configurations": [
         {
-            "command": "bash BorradoDeCompilaciones.sh",
-            "name": "Eliminacion de archivos",
+            "name": "Launch",
             "request": "launch",
-            "type": "node-terminal"
-        }
-    ]
+            "type": "node-terminal",
+            "preLaunchTask": "Ejecucion de la compilacion",  // esto ejecuta la depuracion para que el programa funcione
+            "command": "clear && ${workspaceFolder}/Calculadora/launch", // esto ejecuta el programa que da la compilacion
+            "postDebugTask": "Eliminacion de los ejecutables",  // esto elimina los archivos de ejecuion cuando para la depuracion
+        },
+    ],
+
 }
