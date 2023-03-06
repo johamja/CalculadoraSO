@@ -26,7 +26,7 @@ sudo apt install build-essential    #instalacion de erramientas del sistema
 ```
 
 ``` bash
-sudo apt install gbd                #instalacion del compilador
+sudo apt install gdb.                #instalacion del compilador
 ```
 
 Verificamos que este instalado con el comando que nos dirá la versión de ``gcc``
